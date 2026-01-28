@@ -1,0 +1,25 @@
+{
+  "name": "tanstack-solid-start-example-basic",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && tsc --noEmit",
+    "start": "vite start"
+  },
+  "dependencies": {
+    "solid-js": "1.9.10",
+    "@tanstack/db": "0.5.23",
+    "@tanstack/query-core": "5.90.20",
+    "@tanstack/query-db-collection": "1.0.20",
+    "@tanstack/solid-db": "0.2.3",
+    "@tanstack/solid-table": "8.21.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.9.1",
+    "typescript": "5.9.3",
+    "vite": "7.1.12",
+    "vite-plugin-solid": "2.11.10"
+  }
+}
