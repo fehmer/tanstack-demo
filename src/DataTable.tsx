@@ -30,12 +30,14 @@ export function DataTable<TData>(
     props.query !== undefined ? [...props.query()] : [...props.data],
   );
 
+  const columns = createMemo(() => props.columns);
+
   const table = createSolidTable<TData>({
     get data() {
       return data();
     },
     get columns() {
-      return props.columns;
+      return columns();
     },
     getCoreRowModel: getCoreRowModel(),
   });
