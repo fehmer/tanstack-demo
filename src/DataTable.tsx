@@ -31,6 +31,7 @@ export function DataTable<TData>(
   );
 
   const columns = createMemo(() => props.columns);
+  const headers = columns().map((it) => it.header as string);
 
   const table = createSolidTable<TData>({
     get data() {
@@ -84,7 +85,26 @@ export function DataTable<TData>(
       </table>
 
       <p>Raw data</p>
-      <For each={data()}>{(row) => <pre>{`${JSON.stringify(row)}`}</pre>}</For>
+      <table>
+        <thead>
+          <tr>
+            <For each={columns()}>
+              {(col) => <th>{col.header as string}</th>}
+            </For>
+          </tr>
+        </thead>
+        <tbody>
+          <For each={data()}>
+            {(row) => (
+              <tr>
+                <For each={Object.values(row as any)}>
+                  {(cell) => <td>{cell as string}</td>}
+                </For>
+              </tr>
+            )}
+          </For>
+        </tbody>
+      </table>
     </>
   );
 }
