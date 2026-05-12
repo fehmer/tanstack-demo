@@ -8,18 +8,15 @@ importers:
 
   .:
     dependencies:
-      '@tanstack/db':
-        specifier: 0.5.23
-        version: 0.5.23(typescript@5.9.3)
-      '@tanstack/query-core':
-        specifier: 5.90.20
-        version: 5.90.20
       '@tanstack/query-db-collection':
-        specifier: 1.0.20
-        version: 1.0.20(@tanstack/query-core@5.90.20)(typescript@5.9.3)
+        specifier: 1.0.36
+        version: 1.0.36(@tanstack/query-core@5.100.3)(typescript@5.9.3)
       '@tanstack/solid-db':
-        specifier: 0.2.3
-        version: 0.2.3(solid-js@1.9.10)(typescript@5.9.3)
+        specifier: 0.2.19
+        version: 0.2.19(solid-js@1.9.10)(typescript@5.9.3)
+      '@tanstack/solid-query':
+        specifier: 5.100.3
+        version: 5.100.3(solid-js@1.9.10)
       '@tanstack/solid-table':
         specifier: 8.21.3
         version: 8.21.3(solid-js@1.9.10)
@@ -423,13 +420,13 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@tanstack/db-ivm@0.1.17':
-    resolution: {integrity: sha512-DK7vm56CDxNuRAdsbiPs+gITJ+16tUtYgZg3BRTLYKGIDsy8sdIO7sQFq5zl7Y+aIKAPmMAbVp9UjJ75FTtwgQ==}
+  '@tanstack/db-ivm@0.1.18':
+    resolution: {integrity: sha512-+pZJiRKdoKRM5Epq9T7otD9ZJl82pRFauo7LKuJGrarjVKQ7r+QQlPe3kGdN9LEKSnuNGIWjX9OOY4M8kH4eLw==}
     peerDependencies:
       typescript: '>=4.7'
 
-  '@tanstack/db@0.5.23':
-    resolution: {integrity: sha512-/zO2K2hjkupL0DYHyPLnzEf3gFBlznUyZ+RLWBSFX4Dsf6jhjoGnAVZe6W25fZYyoZ5adb/PlhedHDqKO1u2rg==}
+  '@tanstack/db@0.6.5':
+    resolution: {integrity: sha512-gtCuAo4UtC9SR/kTMu5fVEff6qZ2R1FZi9X7MybtHKA6wve7RePifGG6qBI4OmMB+7juT5/+glNbnqZOrG0/pg==}
     peerDependencies:
       typescript: '>=4.7'
 
@@ -437,19 +434,24 @@ packages:
     resolution: {integrity: sha512-3PouiFjR4B6x1c969/Pl4ZIJleof1M0n6fNX8NRiC9Sqv1g06CVDlEaXUR4212ycGFyfq4q+t8Gi37Xy+z34iQ==}
     engines: {node: '>=18'}
 
-  '@tanstack/query-core@5.90.20':
-    resolution: {integrity: sha512-OMD2HLpNouXEfZJWcKeVKUgQ5n+n3A2JFmBaScpNDUqSrQSjiveC7dKMe53uJUg1nDG16ttFPz2xfilz6i2uVg==}
+  '@tanstack/query-core@5.100.3':
+    resolution: {integrity: sha512-oMO1imV4qStH+GqddafkI7Q7r2ktPL7/0Mu74W1XEhfHHd3oTIrwP3OOIsbtpnnbe8y/IU+8Lm7Bi2LlMhVdNA==}
 
-  '@tanstack/query-db-collection@1.0.20':
-    resolution: {integrity: sha512-QA2Z8DPFPw+yklsevuXePGz46QmAKN1Mkz6lvdYtBwXHPMYM/DYLQH4wgy0Aigbp06Js7SIfHa7xcvWxGP4aUw==}
+  '@tanstack/query-db-collection@1.0.36':
+    resolution: {integrity: sha512-WOHSZeqFOflWpMxp7ndu8x3M8GyLieWyUsS1fReG8wv6I/1MGOz1j3+XNlGoeoWolYF2hV4l324/dB9BxjAwxw==}
     peerDependencies:
       '@tanstack/query-core': ^5.0.0
       typescript: '>=4.7'
 
-  '@tanstack/solid-db@0.2.3':
-    resolution: {integrity: sha512-m0Y2qeKQOBYliXcxN3/oo2YC+cf87EPDA/he6O1oRWQh2Jtey05WZ9A1wuTCKRGk+KtE/fWhZN60kjg86cR25Q==}
+  '@tanstack/solid-db@0.2.19':
+    resolution: {integrity: sha512-3pbTO3p+yznbJfVcSU+oq4r52Wd3vsDIeeokoi7G8S81FgztRgT+6jkPBUUxZdN/fH6pOIDqCFTB1ahS+ZVKWw==}
     peerDependencies:
       solid-js: '>=1.9.0'
+
+  '@tanstack/solid-query@5.100.3':
+    resolution: {integrity: sha512-vEB4y3xGuN+wy5zeX9HiHO/k9xfHqskHAc73cBasmDqn+7Id78v//rLioOi9lFF1ynFnQKu5N2rptfN8ur0Yjw==}
+    peerDependencies:
+      solid-js: ^1.6.0
 
   '@tanstack/solid-table@8.21.3':
     resolution: {integrity: sha512-PmhfSLBxVKiFs01LtYOYrCRhCyTUjxmb4KlxRQiqcALtip8+DOJeeezQM4RSX/GUS0SMVHyH/dNboCpcO++k2A==}
@@ -1104,37 +1106,42 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@tanstack/db-ivm@0.1.17(typescript@5.9.3)':
+  '@tanstack/db-ivm@0.1.18(typescript@5.9.3)':
     dependencies:
       fractional-indexing: 3.2.0
       sorted-btree: 1.8.1
       typescript: 5.9.3
 
-  '@tanstack/db@0.5.23(typescript@5.9.3)':
+  '@tanstack/db@0.6.5(typescript@5.9.3)':
     dependencies:
       '@standard-schema/spec': 1.1.0
-      '@tanstack/db-ivm': 0.1.17(typescript@5.9.3)
+      '@tanstack/db-ivm': 0.1.18(typescript@5.9.3)
       '@tanstack/pacer-lite': 0.2.1
       typescript: 5.9.3
 
   '@tanstack/pacer-lite@0.2.1': {}
 
-  '@tanstack/query-core@5.90.20': {}
+  '@tanstack/query-core@5.100.3': {}
 
-  '@tanstack/query-db-collection@1.0.20(@tanstack/query-core@5.90.20)(typescript@5.9.3)':
+  '@tanstack/query-db-collection@1.0.36(@tanstack/query-core@5.100.3)(typescript@5.9.3)':
     dependencies:
       '@standard-schema/spec': 1.1.0
-      '@tanstack/db': 0.5.23(typescript@5.9.3)
-      '@tanstack/query-core': 5.90.20
+      '@tanstack/db': 0.6.5(typescript@5.9.3)
+      '@tanstack/query-core': 5.100.3
       typescript: 5.9.3
 
-  '@tanstack/solid-db@0.2.3(solid-js@1.9.10)(typescript@5.9.3)':
+  '@tanstack/solid-db@0.2.19(solid-js@1.9.10)(typescript@5.9.3)':
     dependencies:
       '@solid-primitives/map': 0.7.2(solid-js@1.9.10)
-      '@tanstack/db': 0.5.23(typescript@5.9.3)
+      '@tanstack/db': 0.6.5(typescript@5.9.3)
       solid-js: 1.9.10
     transitivePeerDependencies:
       - typescript
+
+  '@tanstack/solid-query@5.100.3(solid-js@1.9.10)':
+    dependencies:
+      '@tanstack/query-core': 5.100.3
+      solid-js: 1.9.10
 
   '@tanstack/solid-table@8.21.3(solid-js@1.9.10)':
     dependencies:

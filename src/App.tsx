@@ -1,15 +1,11 @@
 import { Component } from "solid-js";
-
-import { Collection } from "./Collection";
-import { Store } from "./Store";
-import { Signal } from "./Signal";
+import { CollectionIssue } from "./CollectionIssue";
 
 export const App: Component = () => {
   return (
     <>
-      <Signal />
-      <Store />
-      <Collection />
+      <h1>test</h1>
+      <CollectionIssue />
     </>
   );
 };

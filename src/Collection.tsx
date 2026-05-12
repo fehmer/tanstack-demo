@@ -1,10 +1,9 @@
 import { Component, createMemo } from "solid-js";
-import { createCollection } from "@tanstack/db";
-import { QueryClient } from "@tanstack/query-core";
 import { queryCollectionOptions } from "@tanstack/query-db-collection";
-import { useLiveQuery } from "@tanstack/solid-db";
+import { createCollection, useLiveQuery } from "@tanstack/solid-db";
 import { getColumns, initialData } from "./common";
 import { DataTable } from "./DataTable";
+import { QueryClient } from "@tanstack/solid-query";
 
 const queryClient = new QueryClient();
 

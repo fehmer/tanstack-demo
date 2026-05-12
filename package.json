@@ -9,10 +9,9 @@
     "start": "vite start"
   },
   "dependencies": {
-    "@tanstack/db": "0.5.23",
-    "@tanstack/query-core": "5.90.20",
-    "@tanstack/query-db-collection": "1.0.20",
-    "@tanstack/solid-db": "0.2.3",
+    "@tanstack/query-db-collection": "1.0.36",
+    "@tanstack/solid-db": "0.2.19",
+    "@tanstack/solid-query": "5.100.3",
     "@tanstack/solid-table": "8.21.3",
     "solid-js": "1.9.10"
   },
