@@ -78,12 +78,12 @@ export const Collection: Component = () => {
   };
 
   const columns = createMemo(() => getColumns({ rename, remove }));
+
   return (
     <>
       <h2>Table from collection</h2>
-      <p>on rename table is not updated, raw is updated.</p>
       <button onClick={() => addUser()}>add user</button>
-      <DataTable columns={columns()} query={query} />
+      <DataTable columns={columns()} data={query()} />
     </>
   );
 };

@@ -45,7 +45,7 @@ export const Signal: Component = () => {
       <h2>Table from signal</h2>
       <p>on rename table is updated, raw is not updated.</p>
       <button onClick={() => addUser()}>add user</button>
-      <DataTable columns={columns()} query={signal} />
+      <DataTable columns={columns()} data={signal()} />
     </>
   );
 };

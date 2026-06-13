@@ -14,39 +14,30 @@ export type AnyColumnDef<TData, TValue> =
 
 type DataTableProps<TData, TValue> = {
   columns: AnyColumnDef<TData, TValue>[];
-} & (
-  | {
-      data: TData[];
-      query?: never;
-    }
-  | { data?: never; query: Accessor<TData[]> }
-);
+  data: TData[];
+};
 
-export function DataTable<TData>(
-  // oxlint-disable-next-line typescript/no-explicit-any
-  props: DataTableProps<TData, any>,
-): JSXElement {
-  const data = createMemo(() =>
-    props.query !== undefined ? [...props.query()] : [...props.data],
+export function DataTable<TData>(props: DataTableProps<TData, any>) {
+  // Ensure reactivity: always produce a fresh array reference
+  const data = createMemo(() => props.data.map((r) => ({ ...r })));
+
+  // Columns are usually static, but memo for safety
+  const columns = createMemo(() => props.columns);
+
+  // Recreate the table instance whenever data or columns change
+  const table = createMemo(() =>
+    createSolidTable({
+      data: data(),
+      columns: columns(),
+      getCoreRowModel: getCoreRowModel(),
+    }),
   );
 
-  const columns = createMemo(() => props.columns);
-  const headers = columns().map((it) => it.header as string);
-
-  const table = createSolidTable<TData>({
-    get data() {
-      return data();
-    },
-    get columns() {
-      return columns();
-    },
-    getCoreRowModel: getCoreRowModel(),
-  });
   return (
     <>
       <table>
         <thead>
-          <For each={table.getHeaderGroups()}>
+          <For each={table().getHeaderGroups()}>
             {(headerGroup) => (
               <tr>
                 <For each={headerGroup.headers}>
@@ -65,7 +56,7 @@ export function DataTable<TData>(
         </thead>
 
         <tbody>
-          <For each={table.getRowModel().rows}>
+          <For each={table().getRowModel().rows}>
             {(row) => (
               <tr>
                 <For each={row.getVisibleCells()}>

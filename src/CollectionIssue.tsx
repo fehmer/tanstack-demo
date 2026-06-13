@@ -24,12 +24,16 @@ export const CollectionIssue: Component = () => {
     <>
       <h2>Collection with _id</h2>
       <ol>
-        <For each={items()}>{(item) => <li>{item.name}</li>}</For>
+        <For each={items()}>
+          {(item) => <li id={item.$key}>{item.name}</li>}
+        </For>
       </ol>
 
       <h2>Collection with id</h2>
       <ol>
-        <For each={idItems()}>{(item) => <li>{item.name}</li>}</For>
+        <For each={idItems()}>
+          {(item) => <li id={`id${item.$key}`}>{item.name}</li>}
+        </For>
       </ol>
 
       <button
