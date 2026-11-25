@@ -3,7 +3,7 @@ import viteSolid from "vite-plugin-solid";
 
 export default defineConfig({
   server: {
-    port: 3000,
+    port: 3210,
   },
   plugins: [viteSolid()],
 });
