@@ -9,6 +9,8 @@
     "start": "vite start"
   },
   "dependencies": {
+    "@tanstack/charts": "^1.5.0",
+    "@tanstack/react-charts": "^1.5.0",
     "solid-js": "1.9.20"
   },
   "devDependencies": {
